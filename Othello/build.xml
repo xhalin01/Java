@@ -1,0 +1,14 @@
+<project name="othello" basedir=".">
+	<target name="compile">
+      <javac srcdir="src" destdir="build"/>
+	   <jar destfile="dest-client/othello.jar" basedir="build">
+			<manifest>
+				<attribute name="Main-Class" value="othello" />
+		    </manifest>
+       </jar>
+	   <javadoc sourcepath="src" destdir="doc"/>
+    </target>
+    <target name="run">   
+		<java jar="dest-client/othello.jar" fork="true"/>
+	</target>
+</project>
